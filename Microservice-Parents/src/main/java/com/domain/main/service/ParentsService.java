@@ -12,6 +12,8 @@ public interface ParentsService {
     
     Mono <Parents> findbyidparent(String id);
 	
+    Mono<Parents> Modifyparents(String id,Parents parents);
+    
 	Mono<Parents> createParents( Parents parents);
   
 	Mono<Void> deleteById(String id);

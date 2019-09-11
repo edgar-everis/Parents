@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,6 +55,7 @@ public class ParentsController {
 		return parentservice.findbyidparent(filtro);
 	}
 	
+	//Crea un nuevo pariente
 	@PostMapping("/Parents/create")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Mono<Parents> createStudent(@RequestBody Parents parents)
@@ -62,6 +64,14 @@ public class ParentsController {
 		
 	}
 	
+	//Actualiza un pariente
+		@PutMapping("/Parents/update/{id}")
+		public Mono<Parents> updateStudent(@PathVariable String id,@RequestBody Parents parents)
+		{
+		return parentservice.Modifyparents(id, parents);
+			}
+	
+		//Elimina un pariente
     @DeleteMapping("/Parents/delete/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Mono<Void> deleteStudents(@PathVariable String id) {

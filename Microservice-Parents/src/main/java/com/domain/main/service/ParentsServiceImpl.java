@@ -59,4 +59,13 @@ public class ParentsServiceImpl implements ParentsService{
 		return parentsrepository.findbyidfamilyt(idfamily);
 	}
 
+
+
+	@Override
+	public Mono<Parents> Modifyparents(String id, Parents parents) {
+		// TODO Auto-generated method stub
+		parents.setId(id);
+		return parentsrepository.save(parents);
+	}
+
 }
