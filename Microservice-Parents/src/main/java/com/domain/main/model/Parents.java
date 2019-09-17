@@ -6,15 +6,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@Data
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
 @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
 @Document(collection = "Parents")
-@Builder(toBuilder = true)
+
 public class Parents {
 
 	@Id

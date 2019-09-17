@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ParentsServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Microservice-Parents</a> &gt; <a href="index.source.html" class="el_package">com.domain.main.service</a> &gt; <span class="el_source">ParentsServiceImpl.java</span></div><h1>ParentsServiceImpl.java</h1><pre class="source lang-java linenums">package com.domain.main.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.domain.main.model.Parents;
+import com.domain.main.repository.ParentsRepository;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@Service
+<span class="fc" id="L13">public class ParentsServiceImpl implements ParentsService{</span>
+
+	@Autowired
+	private ParentsRepository parentsrepository;
+	
+	@Override
+	public Flux&lt;Parents&gt; getAll() {
+		// TODO Auto-generated method stub
+<span class="fc" id="L21">		return parentsrepository.findAll();</span>
+	}
+
+	
+
+	@Override
+	public Mono&lt;Parents&gt; createParents(Parents parents) {
+		// TODO Auto-generated method stub
+<span class="fc" id="L29">		return parentsrepository.save(parents);</span>
+	}
+
+	@Override
+	public Mono&lt;Void&gt; deleteById(String id) {
+<span class="fc" id="L34">		System.out.println(&quot;eliminado&quot;);</span>
+<span class="fc" id="L35">		return parentsrepository.deleteById(id);</span>
+	}
+
+
+
+	@Override
+	public Flux&lt;Parents&gt; findbyidstudent(String idstudent) {
+		// TODO Auto-generated method stub
+<span class="fc" id="L43">		return parentsrepository.findbyidstudent(idstudent);</span>
+	}
+
+
+
+	@Override
+	public Mono &lt;Parents&gt; findbyidparent(String id) {
+		// TODO Auto-generated method stub
+<span class="fc" id="L51">		return parentsrepository.findById(id);</span>
+	}
+
+
+
+	@Override
+	public Flux&lt;Parents&gt; findbyidfamilyt(String idfamily) {
+		// TODO Auto-generated method stub
+<span class="fc" id="L59">		return parentsrepository.findbyidfamilyt(idfamily);</span>
+	}
+
+
+
+	@Override
+	public Mono&lt;Parents&gt; Modifyparents(String id, Parents parents) {
+		// TODO Auto-generated method stub
+<span class="fc" id="L67">		parents.setId(id);</span>
+<span class="fc" id="L68">		return parentsrepository.save(parents);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

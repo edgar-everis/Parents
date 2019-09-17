@@ -1,23 +1,21 @@
 package com.domain.main;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+//import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
-import com.domain.main.model.Parents;
-
-import com.domain.main.repository.ParentsRepository;
-
-
-import reactor.core.publisher.Flux;
-
+import springfox.documentation.swagger2.annotations.EnableSwagger2WebFlux;
+//import org.springframework.context.annotation.Bean;
+//import com.domain.main.model.Parents;
+//import com.domain.main.repository.ParentsRepository;
+//import reactor.core.publisher.Flux;
+@EnableSwagger2WebFlux
 @SpringBootApplication
 public class MicroserviceParentsApplication {
 	
-	
+	/*
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	 
 	
@@ -44,7 +42,7 @@ public class MicroserviceParentsApplication {
 	        .subscribe(Parents -> log.info("Parents: {}", Parents));
 
 	    };
-	  }
+	  }*/
 	
 	
 	

@@ -38,9 +38,9 @@ public class ParentsServiceImpl implements ParentsService{
 
 
 	@Override
-	public Flux<Parents> findbyidstudent(String idstudent) {
+	public Flux<Parents> findByIdstudent(String idstudent) {
 		// TODO Auto-generated method stub
-		return parentsrepository.findbyidstudent(idstudent);
+		return parentsrepository.findByIdstudent(idstudent);
 	}
 
 
@@ -54,9 +54,9 @@ public class ParentsServiceImpl implements ParentsService{
 
 
 	@Override
-	public Flux<Parents> findbyidfamilyt(String idfamily) {
+	public Flux<Parents> findByIdfamily(String idfamily) {
 		// TODO Auto-generated method stub
-		return parentsrepository.findbyidfamilyt(idfamily);
+		return parentsrepository.findByIdfamily(idfamily);
 	}
 
 

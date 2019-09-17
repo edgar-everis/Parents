@@ -8,7 +8,7 @@ public interface ParentsService {
 
     Flux<Parents> getAll();
 	
-    Flux<Parents> findbyidstudent(String idstudent);
+    Flux<Parents> findByIdstudent(String idstudent);
     
     Mono <Parents> findbyidparent(String id);
 	
@@ -18,5 +18,5 @@ public interface ParentsService {
   
 	Mono<Void> deleteById(String id);
 	
-	Flux<Parents> findbyidfamilyt(String  idfamily);
+	Flux<Parents> findByIdfamily(String  idfamily);
 }

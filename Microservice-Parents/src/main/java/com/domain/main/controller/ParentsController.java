@@ -43,23 +43,23 @@ public class ParentsController {
 	@GetMapping("/idstudent/{id}")
 	public Flux <Parents> findbyname(@PathVariable String id)
 	{
-		return parentservice.findbyidstudent(id);
+		return parentservice.findByIdstudent(id);
 	}
 	
 	//Lista los estudiantes por familia
 		@GetMapping("/family/{fam}")
 		public Flux <Parents> findbyfamily(@PathVariable String fam)
 		{
-			return parentservice.findbyidfamilyt(fam);
+			return parentservice.findByIdfamily(fam);
 		}
 	
 	
 	
 	//Busqueda por id de parientes
 	@GetMapping("/FindParents/{id}")
-	public Mono <Parents> findbyid(@PathVariable String fam)
+	public Mono <Parents> findbyid(@PathVariable String id)
 	{
-		return parentservice.findbyidparent(fam);
+		return parentservice.findbyidparent(id);
 	}
 	
 	//Crea un nuevo pariente
